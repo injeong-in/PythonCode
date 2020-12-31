@@ -8,10 +8,24 @@ class EdgeValue:
         self.img = img;
 
 
+
     def imageChoice(filename, fileno, format):
             img = cv2.imread('../'+filename+'_'+fileno + format)
             image_gray = cv2.imread('../GH010038_354.jpg', cv2.IMREAD_GRAYSCALE)
             return img;
+
+    def edgeSelector(self,img):
+        edges = cv2.Canny(img, 100, 200)
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+        closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
+
+        contours, _ = cv2.findContours(closed.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours_xy = np.array(contours)
+        contours_xy.shape
+
+        x_min, x_max = 0, 0
+
+        return kernel,closed,contours
 
 obj = EdgeValue(img = EdgeValue.imageChoice('GH010038','354','.jpg'))
 
@@ -20,6 +34,7 @@ obj = EdgeValue(img = EdgeValue.imageChoice('GH010038','354','.jpg'))
 edges = cv2.Canny(obj.img,100,200)
 cv2.imshow('Canny', edges)
 cv2.waitKey(0)
+
 
     # # 케니 엣지 적용
     # edges = cv2.Canny(img=imageChoice(),100,200)

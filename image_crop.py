@@ -44,8 +44,8 @@ def image_crop(path, infilename, format, save_path):
 if __name__ == '__main__':
     warnings.simplefilter('ignore', Image.DecompressionBombWarning)
     # image_crop('F-101_1','.jpg', 'C:/이미지컷/')
-    list = os.listdir('E:/1.ship/18(목포, 진도)/JD_E')
-    print(len(list))
+    list = os.listdir('E:/1.ship/18(목포, 진도)/JD_F')
+    print(list[592])
 
 
     a = 0
@@ -53,8 +53,8 @@ if __name__ == '__main__':
     for i in list:
         # if list[len(list)-1] == i+'.jpg':
         #     print('작업이 끝났습니다')
-        if a > 180:
+        if a > 591:
             i = i.replace(".jpg","")
-            image_crop('E:/1.ship/18(목포, 진도)/JD_E/', i, '.jpg', 'E:/1.ship/18(목포, 진도)/resize/')
+            image_crop('E:/1.ship/18(목포, 진도)/JD_F/', i, '.jpg', 'E:/1.ship/18(목포, 진도)/resize/')
 
         a += 1
