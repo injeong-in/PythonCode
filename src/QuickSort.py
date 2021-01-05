@@ -20,7 +20,7 @@ class SortableArray:
             else:
                 left_pointer, right_pointer = right_pointer, left_pointer
 
-            left_pointer, pivot_position = pivot_position, left_pointer
+            left_pointer, pivot_position = pivot_position, left_pointer #이걸 왜 스왑하는건지??
 
         return left_pointer
 
@@ -30,21 +30,15 @@ class SortableArray:
         if right_index - left_index <= 0:
             return
 
-        pivot_position = self.partition(left_index, right_index)
+        pivot_position = self.partition(left_index, right_index) #객체함수 사용부분
 
         self.quicksort(left_index, pivot_position - 1)
 
-        self.quicksort(pivot_position + 1, right_index)
+        self.quicksort(pivot_position + 1, right_index) # 재귀함수가 두개??
 
-    def func(self,a,b,c = None):
-        d = a+b
-        return a,b,d
 
 if __name__ == '__main__':
 
     obj = SortableArray([0, 5, 2, 1, 6, 3])
-    obj.quicksort(0, len(obj.array)-1)
+    obj.quicksort(0, 5)
     print(obj.array)
-
-    d,e = obj.func(10,20)
-
