@@ -4,8 +4,8 @@ import numpy as np
 
 
 
-img = cv2.imread('./GH010038_354.jpg')
-image_gray = cv2.imread('./GH010038_354.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('./CMC.jpg')
+image_gray = cv2.imread('./CMC.jpg', cv2.IMREAD_GRAYSCALE)
 # 케니 엣지 적용
 edges = cv2.Canny(img,100,200)
 
