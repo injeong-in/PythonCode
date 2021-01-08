@@ -92,29 +92,29 @@ class AutoLabel:
                 local_f.write(
                     self.jsonData + '"imageData": "' + base64_str + '",' + '''"imagePath": "''' + i + '''" } ''' )
 
-    def getSizeList(self, path_str):
+    def getSizeList(self, path_str): # 특정 파일사이즈를 만족하는 파일명만 리스트로 추출
         list = os.listdir(path_str)
         new_list = []
 
         for i in list:
             size = os.path.getsize(path_str + i)
-            if size > 463000 and size < 463100:
+            if size > 463000 and size < 463100: #파일 사이즈 조건
                 new_list.append(i)
 
 
         return new_list;
 
 
-    def preprocessorImg(self, path_str):
+    def preprocessorImg(self, path_str): #getSizeList에서 얻어진 .json파일과 이름일치하는 .JPG 파일을 복사
         jsonList = self.getSizeList(path_str)
         imgList = os.listdir('./imgs')
         new_list = []
-        dst = './preImgs'
+        dst = './preImgs' #복사 원하는 폴더경로 지정
         for i in jsonList:
             for j in imgList:
                 if i.replace('.json','.JPG') == j:
 
-                    shutil.copy('./imgs/'+j, dst)
+                    shutil.copy('./imgs/'+j, dst) #dst 폴더로 복사
                     print(j)
                     break;
                     # print(i)
