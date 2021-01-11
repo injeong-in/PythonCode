@@ -84,7 +84,7 @@ class AutoLabel:
         list = os.listdir(path_str)
 
         for i in list:
-            with open('./imgs/' + i , 'rb') as img:
+            with open(path_str + i , 'rb') as img:
                 base64_str = base64.b64encode(img.read())
                 base64_str = base64_str.decode('utf-8')
 
@@ -123,7 +123,7 @@ class AutoLabel:
 
 
 
-list = os.listdir('./preImgs')
+list = os.listdir('./imgs')
 print(len(list))
 # num = 0
 # for i in list:
@@ -133,7 +133,7 @@ print(len(list))
 
 obj = AutoLabel(1904,988) #파일명, 시작 파일번호, 클래스(label)명, 이미지폭, 이미지넓이
 
-obj.createFile('./preImgs')
+obj.createFile('./imgs/')
 
 # path_str = 'C:/Users/admin/Desktop/MMU-Simulation2/N_BR000_V60_B6_CPA03_CTN CMC(721)/Json/'
 # jsonList = obj.getSizeList(path_str)
