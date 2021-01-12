@@ -282,3 +282,16 @@ if(data.shapes.length > 2) {
 
 console.log(data.shapes.length); //클래스 갯수 구하기
 console.log(JSON.stringify(data.shapes));
+
+
+
+// var def = function (integer,count,sum_value) {
+//   if(integer >= count) 
+//     return;
+//   integer += 1;
+//   sum_value += integer;
+//   console.log(sum_value);
+//   def(integer, count, sum_value);
+// }
+
+// def(0,10,0);

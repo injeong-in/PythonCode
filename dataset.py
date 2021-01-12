@@ -14,7 +14,7 @@ class ChildAuto(AutoLabel):
                                 #param, 폴더경로
         list = os.listdir(path_str)
         new_list = []
-        dst = './preJson'
+        dst = './preJson' #전처리 후 카피시킬 폴더
 
         for i in list:
             with open(path_str + i, 'r') as f:
