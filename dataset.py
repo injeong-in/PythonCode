@@ -7,7 +7,7 @@ from main import AutoLabel
 class ChildAuto(AutoLabel):
 
     def __init__(self, width, height):
-        super(self).__init__(width,height)
+        super().__init__(width,height)
 
 
     def getList(self,path_str): #json객체 위치벡터 points 갯수가 3개이상 넘어가는 파일 골라내기
@@ -49,7 +49,7 @@ class ChildAuto(AutoLabel):
                         # print('삭제된 파일: ' + j)
                         # os.remove('./imgs/'+ j)
 
-    def removeFile(self, path_str):
+    def removeFile(self, path_str): #./preJson폴더 내에 있는 파일이름과 일치하는 파일 삭제
 
         delFolder = os.listdir('./preJson')
         jsonFolder = os.listdir(path_str)
@@ -63,6 +63,6 @@ class ChildAuto(AutoLabel):
 
 if __name__ == '__main__':
 
-    obj = ChildAuto(1904,988)
-
-
+    obj = ChildAuto(1920,1080)
+    # value = obj.getList('C:/Users/admin/Desktop/segmentation/C0060/Json/')
+    obj.removeFile('C:/Users/admin/Desktop/segmentation/C0060/Json/')

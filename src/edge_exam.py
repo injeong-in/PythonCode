@@ -1,20 +1,29 @@
 import cv2, sys
 from  matplotlib import pyplot as plt
 import numpy as np
+import os
 
 class EdgeValue:
 
-    def __init__(self,img):
-        self.img = img;
+    def __init__(self, path_str):
+        self.path_str = path_str
 
+    # def imageChoice(self):
+    #         list = os.listdir(self.path_str)
+    #         new_list = []
+    #
+    #         for file in list:
+    #             img = cv2.imread('../' + file)
+    #             image_gray = cv2.imread('../' + file, cv2.IMREAD_GRAYSCALE)
+    #             new_list.append(img)
+    #         return new_list;
 
-
-    def imageChoice(filename, fileno, format):
-            img = cv2.imread('../'+filename+'_'+fileno + format)
-            image_gray = cv2.imread('../GH010038_354.jpg', cv2.IMREAD_GRAYSCALE)
+    def imageChoice(self, filename):
+            img = cv2.imread(self.path_str + filename)
+            image_gray = cv2.imread(self.path_str + filename, cv2.IMREAD_GRAYSCALE)
             return img;
 
-    def edgeSelector(self,img):
+    def edgeSelector(self, img):
         edges = cv2.Canny(img, 100, 200)
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
         closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
@@ -27,13 +36,24 @@ class EdgeValue:
 
         return kernel,closed,contours
 
-obj = EdgeValue(img = EdgeValue.imageChoice('GH010038','354','.jpg'))
+
+if __name__ == '__main__':
+    list = os.listdir('../imgs/')
+    obj = EdgeValue('../imgs/')
+
+    _, _b, contours = obj.edgeSelector(obj.imageChoice('N_BR000_V60_B8_CPA03_LNG CMC27023.JPG'))
+    print(len(contours))
+    print(len(contours[0]))
+    list = contours
+
+    num = 0
+    new_list = []
 
 
 
-edges = cv2.Canny(obj.img,100,200)
-cv2.imshow('Canny', edges)
-cv2.waitKey(0)
+    print(contours[41][1][0])
+
+
 
 
     # # 케니 엣지 적용

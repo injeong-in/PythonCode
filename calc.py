@@ -1,17 +1,21 @@
 import os
 
-
-
-parentList = os.listdir('C:/Users/admin/Desktop/검수자 박정인 (3411)/')
+path = 'C:/Users/admin/Desktop/segmentation'
+parentList = os.listdir(path)
 print(parentList)
 
 for parent in parentList:
-    path_str = 'C:/Users/admin/Desktop/검수자 박정인 (3411)/{}/'.format(parent)
+    path_str = path + '/{}/'.format(parent)
     list = os.listdir(path_str)
-    print(parent,'갯수:', len(list))
+    print(parent,'개수:', len(list)-2)
 
 
 for parent in parentList:
-    path_str = 'C:/Users/admin/Desktop/검수자 박정인 (3411)/{}/Xml/'.format(parent)
+    path_str = path + '/{}/xml/'.format(parent)
     list = os.listdir(path_str)
-    print(parent, 'xml갯수:', len(list))
+    print(parent, 'xml개수:', len(list))
+
+for parent in parentList:
+    path_str = path + '/{}/json/'.format(parent)
+    list = os.listdir(path_str)
+    print(parent, 'json개수:', len(list))

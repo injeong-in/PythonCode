@@ -1,23 +1,15 @@
 
 
-def sum(integer, count, sum_value):
-    if integer >= count:
-        return
-    integer += 1
-    sum_value += integer
+def sum(integer, count, sum_value = 0):
+    #param: integer = 시작값, count = 마지막 값
+    if integer > count:
+        return sum_value
+    else:
+        sum_value += integer
+        integer += 1
+        return sum(integer, count, sum_value)
 
-    sum(integer, count, sum_value)
 
 
-
-
-# def exam(integer):
-#     if integer > 10:
-#         return integer
-#     else:
-#         return '오류입니다'
-#
-# value = exam(20)
-# print(value)
-
-sum(0,10,0)
+value = sum(1,100)
+print('최종값: ', value)
