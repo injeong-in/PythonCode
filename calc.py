@@ -1,6 +1,6 @@
 import os
 
-path = 'C:/Users/admin/Desktop/segmentation'
+path = 'F:/Container/00001~000030'
 parentList = os.listdir(path)
 print(parentList)
 
@@ -15,7 +15,7 @@ for parent in parentList:
     list = os.listdir(path_str)
     print(parent, 'xml개수:', len(list))
 
-for parent in parentList:
-    path_str = path + '/{}/json/'.format(parent)
-    list = os.listdir(path_str)
-    print(parent, 'json개수:', len(list))
+# for parent in parentList:
+#     path_str = path + '/{}/json/'.format(parent)
+#     list = os.listdir(path_str)
+#     print(parent, 'json개수:', len(list))

@@ -41,19 +41,61 @@ if __name__ == '__main__':
     list = os.listdir('../imgs/')
     obj = EdgeValue('../imgs/')
 
-    _, _b, contours = obj.edgeSelector(obj.imageChoice('N_BR000_V60_B8_CPA03_LNG CMC27023.JPG'))
-    print(len(contours))
-    print(len(contours[0]))
-    list = contours
+    _, _, contours = obj.edgeSelector(obj.imageChoice('GH010038_354.jpg'))
+    print('객체개수: {}개'.format(len(contours)))
 
-    num = 0
+
     new_list = []
+    count = 0
+
+    print('''{
+                  "label": "Ship",
+                  "points":''')
+
+    for i in range(len(contours)):
+        for j in range(len(contours[i])):
+            if j != 0 and j != len(contours[i]) - 1:
+                new_list.append(str(contours[i][j][0]).replace(' ', ',') + ', ')
+                print(new_list[count].replace(',,',','))
+            elif j == len(contours[i]) - 1:
+                new_list.append(str(contours[i][j][0]).replace(' ', ','))
+                print(new_list[count].replace(',,', ','))
+            else:
+                new_list.append('['+str(contours[i][j][0]).replace(' ', ',') + ', ')
+                print(new_list[count].replace(',,',','))
+
+
+            count += 1
+
+            if i != len(contours) - 1 and j == len(contours[i]) - 1:
+                print('''
+                ],
+                  "group_id": null,
+                  "shape_type": "polygon",
+                  "flags": {}
+                },
+                {
+                  "label": "Ship",
+                  "points": ''')
+            elif i == len(contours) - 1 and j == len(contours[i]) - 1:
+                print('''
+                ],
+                  "group_id": null,
+                  "shape_type": "polygon",
+                  "flags": {}
+                }''')
+                
+
+    # for vector in new_list:
+    #     print(vector.replace(',,', ','))
 
 
 
-    print(contours[41][1][0])
 
 
+
+    # for j in new_list:
+    #     print(str(j).replace(' ',',') +',')
 
 
     # # 케니 엣지 적용

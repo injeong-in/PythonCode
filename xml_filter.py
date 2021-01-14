@@ -7,6 +7,14 @@ class xmlprocess:
         self.parent_path = parent_path
         print('path가 등록되었습니다')
 
+    def removeTag(self, path_str):
+        list = os.listdir(path_str)
+        for xml in list:
+            tree = elemTree.parse(path_str + '{}'.format(xml))
+            root = tree.getroot()
+
+        print(len(root))
+
 
     def process(self): #object name이 존재하고 name이 일치할경우 통과, 불일치하거나 name이 없을경우 삭제
         parentList = os.listdir(self.parent_path)
@@ -18,10 +26,10 @@ class xmlprocess:
             for file in list:
                 try:
                     tree = elemTree.parse(path_str + '{}'.format(file))
-                    bouy = tree.find('./object')
-                    name = bouy.find('name')
+                    object = tree.find('./object')
+                    name = object.find('name')
 
-                    objectName = 'Buoy'
+                    objectName = 'Car_Carrier_Ship'
 
                     if name.text == objectName:
                         # print('정상입니다')
@@ -33,9 +41,8 @@ class xmlprocess:
                     print('{}의 {}이 삭제되었습니다: {}개'.format(parent, file, delCount))
 
 if __name__ == '__main__':
-     obj = xmlprocess('C:/Users/admin/Desktop/segmentation/')
+     obj = xmlprocess('F:/Container/00001~000030/')
      obj.process()
-
 
         # parentList = os.listdir('C:/Users/admin/Desktop/검수자 박정인 (3411)/')
         # print(parentList)
