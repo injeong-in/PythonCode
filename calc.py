@@ -1,6 +1,6 @@
 import os
 
-path = 'F:/Container/00001~000030'
+path = 'F:/Container/000031~000060'
 parentList = os.listdir(path)
 print(parentList)
 

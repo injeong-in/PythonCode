@@ -10,7 +10,7 @@ class AutoBox(ChildAuto):
 
         self.xml_text = '''
         <annotation>
-            <folder>C0011</folder>
+            <folder>ContainerRound000004</folder>
             <source>
                 <database>Unknown</database>
             </source>
@@ -26,12 +26,11 @@ class AutoBox(ChildAuto):
                 <truncated>0</truncated>
                 <difficult>0</difficult>
                 <bndbox>
-                    <xmin>595</xmin>
-                    <ymin>310</ymin>
-                    <xmax>1207</xmax>
-                    <ymax>542</ymax>
+                    <xmin>507</xmin>
+                    <ymin>469</ymin>
+                    <xmax>1060</xmax>
+                    <ymax>568</ymax>
                 </bndbox>
-
             </object>
         
         '''.format(self.xml_width, self.xml_height)
@@ -46,7 +45,7 @@ class AutoBox(ChildAuto):
 
                 local_f = open("./xml/" + j.replace('.jpg','.xml'), 'w')  # 로컬 저장
                 local_f.write(
-                    self.xml_text + '<path>' '''</path>
+                    self.xml_text + '''
                         <filename>{0}</filename>
                 </annotation>'''.format(j) )
 
@@ -56,7 +55,7 @@ class AutoBox(ChildAuto):
 if __name__ == '__main__':
 
     obj = AutoBox('1920', '1080')
-    obj.createXML('C:/Users/admin/Desktop/segmentation/C0012/')
+    obj.createXML('F:/Container/00001~000030/ContainerRound000005/')
 
 
 
