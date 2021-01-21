@@ -1,43 +1,62 @@
-import shutil
+import xml.etree.ElementTree as elemTree
 import os
-import fileinput
-import sys
+import shutil
+
+# tree = elemTree.parse('./xml/ContainerRound000060_000.xml')
+# root = tree.getroot()
+# obj = root.findall("object")
+# object = tree.find('./object')
+# name = object.find('name')
 
 
-# path = 'F:/Container/00001~000030'
-# # parentList = os.listdir(path)
-# # print(parentList)
-# #
-# # for parent in parentList:
-# #     path_str = path + '/{}/'.format(parent)
-# #     list = os.listdir(path_str)
-# #     print(parent,'개수:', len(list)-2)
 
 
-# 파일 이름 전체 바꾸기
-# path = './xml'
-#
-# file_names = os.listdir(path)
-#
-# for name in file_names:
-#     src = os.path.join(path, name)
-#     dst = name.replace('13_', '17_') #원하는 부분의 이름만 바꾸기
-#     dst = os.path.join(path, dst)
-#     os.rename(src, dst)
+# print(obj[0].find('name').text)
+# print(obj[1].find('name').text)
+# print(len(obj))
+
+path = 'F:/OceanSandBoxMod3/Captures/2021-01-20/'
+list = os.listdir(path)
 
 
-# xml라인 수정
-index = 'files[-7] + files[-6] + files[-5]',
+newList = []
 
-xml_file = os.listdir('./xml/')
+for i in list:
+    print(i)
+    newList.append(os.listdir(path + i))
 
-for files in xml_file:
+print('----------------1월20일 폴더목록----------------')
+for j in range(0,len(list)):
+    print(newList[j])
 
-    for line in fileinput.input('./xml/{}'.format(files), inplace = True):
-        if '<folder>' in line :
-            line = line.replace(line, '<folder>ContainerRound000027</folder>')
-        if '<filename>' in line :
-            line = line.replace(line, '<filename>ContainerRound000027_{}.jpg</filename>'.format(files[-5])) #인덱스 활용해서 부분수정
-        if '<path>' in line :
-            line = line.replace(line, '')
-        sys.stdout.write(line)
+path = 'F:/OceanSandBoxMod3/Captures/2021-01-21/'
+list = os.listdir(path)
+
+newList = []
+
+for i in list:
+    print(i)
+    newList.append(os.listdir(path + i))
+
+print('----------------1월21일 폴더목록----------------')
+for j in range(0,len(list)):
+    print(newList[j])
+
+sum = 0
+for h in range(2):
+    two_ship = os.listdir(path+'two_ship/'+newList[4][h])
+
+    if h==0:
+        print('collision: ',two_ship, '갯수:{}개'.format(len(two_ship)))
+    else:
+        print('cross: ', two_ship, '갯수:{}개'.format(len(two_ship)))
+    sum += len(two_ship)
+print('two_ship 총합:{}개'.format(sum))
+
+sum = 0
+for k in range(9):
+    spectrum = os.listdir(path+'Spectrum/'+newList[3][k])
+    print('{0}: {1}, {2}개'.format(newList[3][k],spectrum, len(spectrum)))
+    sum += len(spectrum)
+
+print('Spectrum 총합:{}개'.format(sum))

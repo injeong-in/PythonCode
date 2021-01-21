@@ -2,6 +2,7 @@ import xml.etree.ElementTree as elemTree
 import os
 import shutil
 
+#xml필터링 및 복사용 클래스
 class xmlprocess:
 
     def __init__(self, parent_path):
@@ -17,12 +18,12 @@ class xmlprocess:
         print(len(root))
 
 
-    def copyXml(self,xml_path,img_path):
+    def copyXml(self,xml_path,img_path,copy_folder):
 
         xmlList = os.listdir(xml_path)
         imgList = os.listdir(img_path)
         new_list = []
-        dst = './xml'  # 복사 원하는 폴더경로 지정
+        dst = copy_folder  # 복사 원하는 폴더경로 지정
         for i in xmlList:
             for j in imgList:
                 if i[-6]+i[-5] == j[-6]+j[-5]:
@@ -58,14 +59,18 @@ class xmlprocess:
             for file in list:
                 try:
                     tree = elemTree.parse(path_str + '{}'.format(file))
-                    object = tree.find('./object')
-                    name = object.find('name')
+                    root = tree.getroot()
+                    object = root.findall('object')
+                    name = object[0].find('name').text
+                    objectName = 'Ship'
 
-                    objectName = 'Car_Carrier_Ship'
-
-                    if name.text == objectName:
+                    if name==objectName or len(object) < 2:
                         # print('정상입니다')
                         pass
+                    else:
+                        os.remove(path_str + '{}'.format(file))
+                        delCount += 1
+                        print('{}의 {}이 삭제되었습니다: {}개'.format(parent, file, delCount))
 
                 except:
                     os.remove(path_str + '{}'.format(file))
@@ -75,9 +80,9 @@ class xmlprocess:
 if __name__ == '__main__':
      obj = xmlprocess('F:/Container/000031~000060/')
      obj.process()
-     # obj.copyXml('F:/Container/00001~000030/ContainerRound000025/xml/','F:/Container/00001~000030/ContainerRound000027/')
-     #
-     # obj.filenameChange('./xml/','25_','27_')
+     # obj.copyXml('F:/Container/000061~000072/ContainerRound000061/xml/', 'F:/Container/000061~000072/ContainerRound000062/', './xml')
+
+
 
 
 
