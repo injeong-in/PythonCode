@@ -21,6 +21,6 @@ student_data = {
     ]
 }
 
-value = list(student_data.values())
+list = student_data.values()
 
-print(value[3])
+print(list.get(1))

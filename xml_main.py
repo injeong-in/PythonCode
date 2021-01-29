@@ -3,14 +3,14 @@ import os
 
 class AutoBox(ChildAuto):
 
-    def __init__(self, xml_width, xml_height ):
+    def __init__(self, xml_width, xml_height, xml_name ):
         self.xml_width = xml_width
         self.xml_height = xml_height
-
+        self.xml_name = xml_name
 
         self.xml_text = '''
         <annotation>
-            <folder>ContainerRound000004</folder>
+            
             <source>
                 <database>Unknown</database>
             </source>
@@ -21,25 +21,28 @@ class AutoBox(ChildAuto):
             </size>
             <segmented>0</segmented>
             <object>
-                <name>Ship</name>
+                <name>{2}</name>
                 <pose>Unspecified</pose>
                 <truncated>0</truncated>
                 <difficult>0</difficult>
                 <bndbox>
-                    <xmin>507</xmin>
-                    <ymin>469</ymin>
-                    <xmax>1060</xmax>
-                    <ymax>568</ymax>
+                   			<xmin>288</xmin>
+			<ymin>503</ymin>
+			<xmax>525</xmax>
+			<ymax>612</ymax>
+
+
+
                 </bndbox>
             </object>
         
-        '''.format(self.xml_width, self.xml_height)
+        '''.format(self.xml_width, self.xml_height, self.xml_name)
 
 
     def createXML(self, path_str):
         list = os.listdir(path_str)
-
-        for i in range(len(list) - 2):
+        count = 0
+        for i in range(len(list) - 1):
 
                 j = list[i]
 
@@ -49,13 +52,15 @@ class AutoBox(ChildAuto):
                         <filename>{0}</filename>
                 </annotation>'''.format(j) )
 
+                count += 1
+                print('{},{}개 생성'.format(j.replace('.jpg','.xml'), count))
 
 
 
 if __name__ == '__main__':
 
-    obj = AutoBox('1920', '1080')
-    obj.createXML('F:/Container/00001~000030/ContainerRound000005/')
+    obj = AutoBox('1920', '1080', 'Crane')
+    obj.createXML('F:\Working/1.29/2021-0123 IncheonPort/Crane/')
 
 
 

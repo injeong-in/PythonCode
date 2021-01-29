@@ -31,10 +31,11 @@ index = 'files[-7] + files[-6] + files[-5]',
 
 
 
-obj = xmlprocess('F:/Container/')
-obj.filenameChange('./xml/','67_','68_')
+# obj = xmlprocess('F:/Container/')
+# obj.filenameChange('./xml/','67_','68_')
 
 xml_file = os.listdir('./xml/')
+
 
 for files in xml_file:
 

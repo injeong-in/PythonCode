@@ -2,7 +2,6 @@ import xml.etree.ElementTree as elemTree
 import os
 import shutil
 
-# tree = elemTree.parse('./xml/ContainerRound000060_000.xml')
 # root = tree.getroot()
 # obj = root.findall("object")
 # object = tree.find('./object')
