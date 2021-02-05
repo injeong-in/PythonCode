@@ -3,7 +3,7 @@ import os
 
 class AutoBox(ChildAuto):
 
-    def __init__(self, xml_width, xml_height, xml_name ):
+    def __init__(self, xml_width, xml_height, xml_name):
         self.xml_width = xml_width
         self.xml_height = xml_height
         self.xml_name = xml_name
@@ -25,21 +25,12 @@ class AutoBox(ChildAuto):
                 <pose>Unspecified</pose>
                 <truncated>0</truncated>
                 <difficult>0</difficult>
-                <bndbox>
-                   			<xmin>288</xmin>
-			<ymin>503</ymin>
-			<xmax>525</xmax>
-			<ymax>612</ymax>
-
-
-
-                </bndbox>
-            </object>
+                
         
         '''.format(self.xml_width, self.xml_height, self.xml_name)
 
 
-    def createXML(self, path_str):
+    def createXML(self, path_str, w_h_range):
         list = os.listdir(path_str)
         count = 0
         for i in range(len(list) - 1):
@@ -49,6 +40,7 @@ class AutoBox(ChildAuto):
                 local_f = open("./xml/" + j.replace('.jpg','.xml'), 'w')  # 로컬 저장
                 local_f.write(
                     self.xml_text + '''
+                        
                         <filename>{0}</filename>
                 </annotation>'''.format(j) )
 
@@ -59,8 +51,8 @@ class AutoBox(ChildAuto):
 
 if __name__ == '__main__':
 
-    obj = AutoBox('1920', '1080', 'Crane')
-    obj.createXML('F:\Working/1.29/2021-0123 IncheonPort/Crane/')
+    obj = AutoBox('1920', '1080', 'Light_House')
+    obj.createXML('C:/Working/02.02/2020-1211 Onsea-BusanPort-Upload$$$$$/Light_House')
 
 
 

@@ -123,17 +123,18 @@ class AutoLabel:
 
 
 
-list = os.listdir('./imgs')
-print(len(list))
+# list = os.listdir('./imgs')
+# print(len(list))
+
 # num = 0
 # for i in list:
 #     if i == 'a':
 #         print(num)
 #     num+=1
 
-obj = AutoLabel(1904,988) #파일명, 시작 파일번호, 클래스(label)명, 이미지폭, 이미지넓이
-
-obj.createFile('./imgs/')
+# obj = AutoLabel(1904,988) #파일명, 시작 파일번호, 클래스(label)명, 이미지폭, 이미지넓이
+#
+# obj.createFile('./imgs/')
 
 # path_str = 'C:/Users/admin/Desktop/MMU-Simulation2/N_BR000_V60_B6_CPA03_CTN CMC(721)/Json/'
 # jsonList = obj.getSizeList(path_str)

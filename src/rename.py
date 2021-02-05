@@ -8,19 +8,61 @@ import shutil
 
 
 
-def rename(path_str):
+def renameJpg(path_str, length):
 
     list = os.listdir(path_str)
-    obj = xmlprocess('F:/Container/')
+    obj = xmlprocess('C:/')
+    count = 0
     for i in range(len(list)):
-        if len(list[i]) == 26:
-            obj.filenameChange(path_str,'_{}.jpg'.format(list[i][-5]),'_00{}.jpg'.format(list[i][-5]))
-        if len(list[i]) == 27:
-            obj.filenameChange(path_str,'_{}.jpg'.format(list[i][-6]+list[i][-5]),'_0{}.jpg'.format(list[i][-6]+list[i][-5]))
+        if len(list[i]) == length:
+            obj.filenameChange(path_str, list[i], '_{}.jpg'.format(list[i][-5]),'_0000{}.jpg'.format(list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+        if len(list[i]) == length + 1:
+            obj.filenameChange(path_str, list[i], '_{}.jpg'.format(list[i][-6]+list[i][-5]),'_000{}.jpg'.format(list[i][-6]+list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+        if len(list[i]) == length + 2:
+            obj.filenameChange(path_str, list[i], '_{}.jpg'.format(list[i][-7]+list[i][-6]+list[i][-5]),'_00{}.jpg'.format(list[i][-7]+list[i][-6]+list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+        if len(list[i]) == length + 3:
+            obj.filenameChange(path_str,list[i],'_{}.jpg'.format(list[i][-8]+list[i][-7]+list[i][-6]+list[i][-5]),'_0{}.jpg'.format(list[i][-8]+list[i][-7]+list[i][-6]+list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
 
-#
-for i in range(2):
-    rename('F:/Container/000061~000072/ContainerRound0000{}/'.format(i+71))
 
+
+def renameXml(path_str, length):
+
+    list = os.listdir(path_str)
+    obj = xmlprocess('C:/')
+    count = 0
+    for i in range(len(list)):
+        if len(list[i]) == length:
+            obj.filenameChange(path_str, list[i], '_{}.xml'.format(list[i][-5]),'_0000{}.xml'.format(list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+        if len(list[i]) == length + 1:
+            obj.filenameChange(path_str, list[i], '_{}.xml'.format(list[i][-6]+list[i][-5]),'_000{}.xml'.format(list[i][-6]+list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+        if len(list[i]) == length + 2:
+            obj.filenameChange(path_str, list[i], '_{}.xml'.format(list[i][-7]+list[i][-6]+list[i][-5]),'_00{}.xml'.format(list[i][-7]+list[i][-6]+list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+        if len(list[i]) == length + 3:
+            obj.filenameChange(path_str,list[i],'_{}.xml'.format(list[i][-8]+list[i][-7]+list[i][-6]+list[i][-5]),'_0{}.xml'.format(list[i][-8]+list[i][-7]+list[i][-6]+list[i][-5]))
+            count += 1
+            print(list[i], 'count:{}'.format(count))
+
+# var = 'Ch01_CH 01_0217_0.jpg'
+# print(len(var))
+
+path = ''
+list = os.listdir(path)
+
+
+renameXml('C:/Working/02.05/Ch01_CH 01_0217/xml/', len(list[0]))
 
 # rename('F:/Container/000031~000060/ContainerRound0000{}/'.format(60))
