@@ -34,7 +34,6 @@ def renameJpg(path_str, length):
 
 
 def renameXml(path_str, length):
-
     list = os.listdir(path_str)
     obj = xmlprocess('C:/')
     count = 0
@@ -59,10 +58,13 @@ def renameXml(path_str, length):
 # var = 'Ch01_CH 01_0217_0.jpg'
 # print(len(var))
 
-path = ''
+path = 'C:/Working/02.08/Ch01_CH 01_0415/Ship/'
 list = os.listdir(path)
 
+print(len('Ch01_CH 01_0415_516.jpg'))
 
-renameXml('C:/Working/02.05/Ch01_CH 01_0217/xml/', len(list[0]))
 
+
+# renameJpg(path, 21)
+renameXml(path+'xml/', 21)
 # rename('F:/Container/000031~000060/ContainerRound0000{}/'.format(60))

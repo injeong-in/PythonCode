@@ -1,0 +1,36 @@
+<annotation>
+    <folder>Bulk_Carrier</folder>
+    <filename>0209_ByungGyu_015_0269.jpg</filename>
+    <path>C:\Working\02.18\Bulk_Carrier\0209_ByungGyu_015_0269.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>1920</width>
+        <height>1080</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>Fender</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>4</xmin>
+            <ymin>491</ymin>
+            <xmax>206</xmax>
+            <ymax>585</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Fender</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>945</xmin>
+            <ymin>423</ymin>
+            <xmax>1125</xmax>
+            <ymax>497</ymax>
+        </bndbox>
+    </object>    <object>

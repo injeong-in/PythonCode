@@ -67,7 +67,7 @@ class AutoLabelling(AutoBox):
 
                 try:
                     print(searchImg[i], img[j])
-                    result, w_h_range = find_almost_similar_image_locations('./img/' + searchImg[i], source_path + img[j], 0.3)
+                    result, w_h_range = find_almost_similar_image_locations('./img/' + searchImg[i], source_path + img[j], 0.6)
                     self.createXML(img[j], w_h_range)
                     print(w_h_range)
                     count += 1
@@ -86,7 +86,9 @@ class AutoLabelling(AutoBox):
 
 
 if __name__ == '__main__':
-    obj = AutoLabelling('1920','1080','Ship')
-    source_path = 'C:/Working/02.05/Ch01_CH 01_0215/Ship/'
+    class_name = 'Container_Ship'
+    date = '02.17'
+    obj = AutoLabelling('1920','1080','{0}'.format(class_name))
+    source_path = 'C:/Working/{0}/{1}/'.format(date, class_name)
 
-    obj.detectImg(source_path,4,710)
+    obj.detectImg(source_path,1,373)

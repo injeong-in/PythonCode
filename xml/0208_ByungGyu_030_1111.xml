@@ -1,0 +1,36 @@
+<annotation>
+    <folder>Bulk_Carrier()</folder>
+    <filename>0208_ByungGyu_028_0103.jpg</filename>
+    <path>C:\Working\02.18\Bulk_Carrier()\0208_ByungGyu_028_0103.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>1920</width>
+        <height>1080</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>Bulk_Carrier</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>649</xmin>
+            <ymin>541</ymin>
+            <xmax>829</xmax>
+            <ymax>600</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Bulk_Carrier</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1572</xmin>
+            <ymin>440</ymin>
+            <xmax>1665</xmax>
+            <ymax>459</ymax>
+        </bndbox>
+    </o

@@ -2,30 +2,59 @@ from xml_filter import xmlprocess
 import os
 import xml.etree.ElementTree as elemTree
 if __name__ == '__main__':
-    obj = xmlprocess('C:/Working/02.05/Ch01_CH 01_0217/')
-    xml = 'F:/Working/02.04/2021-0106 Yeosu^^^/Ship/xml/'
-    img = 'F:/Working/02.04/2021-0106 Yeosu^^^/Ship/'
+
+
+    date = '02.18'
+    class_name = 'Bulk_Carrier'
+
+    obj = xmlprocess('C:/')
+    # obj = xmlprocess('C:/Working/{}/'.format(date))
+    xml = 'C:/Working/{0}/{1}/xml/'.format(date, class_name)
+    img = 'C:/Working/{0}/{1}/'.format(date, class_name)
 
 
     # xml갯수 폴더이름 변경
-    name = os.listdir('F:/Working/02.05/')
-
-    for folder in name:
-        obj.foldernameChange('F:/Working/02.05/{}'.format(folder)+'/')
+    path = 'F:/Working/02.18/JeungIn(8512)/'
 
 
-    # obj.process('Ship')
+    obj.foldernameChange(path)
 
+    # obj.process('Container_Ship')
+
+    # obj.minimumProcess('',class_name)
 
     # obj.preprocessorImg(xml,img)
+    # obj.preprocessorImg('./xml', img)
 
-    # obj.deleteImg('Ship')
 
-    # obj.deleteConfTag('Ship', 10)
+    # obj.deleteImg(class_name)
 
-    # obj.deleteTag('Ship', 350)
-    
-    # obj.modifyXml('Ship','Fender','Ship')
+    # first_index = obj.searchIndex(class_name, '0210_JunHyuck_009_0384.xml')
+    # last_index = obj.searchIndex(class_name, '0210_JunHyuck_009_1709.xml')
+
+    # obj.deleteConfTag(class_name)
+    # obj.deleteSecondTag(class_name)
+    # obj.exceedDeleteTag(class_name, 10, 90)
+    # obj.rangeBelowDeleteTag(class_name, first_index, last_index, 60, 30)
+    # obj.belowDeleteTag(class_name, 139, 90)
+
+    # obj.rangeDeleteTag(class_name, first_index, last_index, 0, 1920, 800, 1080)
+    # obj.rangeDelteExtraTag(class_name, first_index, last_index, 0)
+    # obj.deletePath(class_name)
+
+    # obj.moveNoneXml(class_name)
+    # obj.moveXml(class_name, 3)
+
+
+    # tag_list = obj.modifyXml(class_name,'Fender',class_name)
+    # obj.totalModifyXml(class_name, 'Bulk_Carrier')
+    # obj.rangeReduceHeight(class_name, first_index, last_index, 100, 25)
+    # obj.reduceHeight(class_name,40, 10)
+    # obj.reduceHeight('AutoLabel',30, 6)
+
+
+
+
 
     # targetXML = open('F:/Working/1.29/Ch01_CH 01_2814/Ship_1412/xml/Ch01_CH 01_2814_1245.xml', 'rt', encoding='UTF8')
     #

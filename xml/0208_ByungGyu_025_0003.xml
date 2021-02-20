@@ -1,0 +1,26 @@
+<annotation>
+	<folder>preImgs</folder>
+	<filename>0208_ByungGyu_025_0003.jpg</filename>
+	<path>C:\AutoLabel\preImgs\0208_ByungGyu_025_0003.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Bulk_Carrier</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>940</xmin>
+			<ymin>426</ymin>
+			<xmax>1029</xmax>
+			<ymax>442</ymax>
+		</bndbox>
+	</object>
+</annotation>

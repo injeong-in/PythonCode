@@ -1,0 +1,43 @@
+   "totalIndexingTime" : "670 ms",
+      "statsPerFileType" : [ {
+        "fileType" : "XML",
+        "numberOfFiles" : 520,
+        "totalFilesSize" : "879.87 kB",
+        "partOfTotalIndexingTime" : "100.0%",
+        "partOfTotalContentLoadingTime" : "100.0%"
+      } ],
+      "statsPerIndexer" : [ {
+        "indexId" : "Stubs",
+        "numberOfFiles" : 520,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "43.5%"
+      }, {
+        "indexId" : "Trigram.Index",
+        "numberOfFiles" : 520,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "40.2%"
+      }, {
+        "indexId" : "TodoIndex",
+        "numberOfFiles" : 519,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "8.2%"
+      }, {
+        "indexId" : "DomFileIndex",
+        "numberOfFiles" : 519,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "2.5%"
+      }, {
+        "indexId" : "IdIndex",
+        "numberOfFiles" : 519,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "2.2%"
+      }, {
+        "indexId" : "RelaxSymbolIndex",
+        "numberOfFiles" : 519,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "1.9%"
+      }, {
+        "indexId" : "fileIncludes",
+        "numberOfFiles" : 519,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexing

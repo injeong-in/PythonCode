@@ -1,0 +1,44 @@
+{
+  "appInfo" : {
+    "build" : "203.6682.179",
+    "buildDate" : "Thu, 31 Dec 2020 02:06:39 +0900",
+    "productCode" : "PC",
+    "generated" : "Fri, 19 Feb 2021 10:26:00 +0900",
+    "os" : "Windows 10 10.0",
+    "runtime" : "JetBrains s.r.o. 11.0.9.1 11.0.9.1+11-b1145.63"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 2095841280,
+    "numberOfProcessors" : 4,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "AutoLabel",
+    "numberOfFileProviders" : 1,
+    "totalNumberOfFiles" : 520,
+    "totalNumberOfUpToDateFiles" : 0,
+    "times" : {
+      "totalUpdatingTime" : "669 ms",
+      "indexingTime" : "669 ms",
+      "updatingStart" : "Fri, 19 Feb 2021 10:25:59 +0900",
+      "updatingEnd" : "Fri, 19 Feb 2021 10:26:00 +0900",
+      "wasInterrupted" : false
+    },
+    "numberOfIndexingThreads" : 0,
+    "totalStatsPerFileType" : [ {
+      "fileType" : "XML",
+      "partOfTotalIndexingTime" : "100.0%",
+      "partOfTotalContentLoadingTime" : "100.0%",
+      "totalNumberOfFiles" : 520,
+      "totalFilesSize" : "879.87 kB",
+      "indexingSpeed" : "1.48 MB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Refreshed files",
+        "numberOfFiles" : 520,
+        "totalFilesSize" : "879.87 kB",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    } ],
+    "totalStatsPerInd

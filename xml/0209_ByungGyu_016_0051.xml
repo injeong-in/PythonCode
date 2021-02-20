@@ -1,0 +1,31 @@
+{
+  "appInfo" : {
+    "build" : "203.6682.179",
+    "buildDate" : "Thu, 31 Dec 2020 02:06:39 +0900",
+    "productCode" : "PC",
+    "generated" : "Fri, 19 Feb 2021 11:04:13 +0900",
+    "os" : "Windows 10 10.0",
+    "runtime" : "JetBrains s.r.o. 11.0.9.1 11.0.9.1+11-b1145.63"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 2095841280,
+    "numberOfProcessors" : 4,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "AutoLabel",
+    "numberOfFileProviders" : 1,
+    "totalNumberOfFiles" : 520,
+    "totalNumberOfUpToDateFiles" : 0,
+    "times" : {
+      "totalUpdatingTime" : "92 ms",
+      "indexingTime" : "92 ms",
+      "updatingStart" : "Fri, 19 Feb 2021 11:04:13 +0900",
+      "updatingEnd" : "Fri, 19 Feb 2021 11:04:13 +0900",
+      "wasInterrupted" : false
+    },
+    "numberOfIndexingThreads" : 0,
+    "totalStatsPerFileType" : [ {
+      "fileType" : "UNKNO

@@ -25,12 +25,21 @@ class AutoBox(ChildAuto):
                 <pose>Unspecified</pose>
                 <truncated>0</truncated>
                 <difficult>0</difficult>
+                <bndbox>
+                    <xmin></xmin>
+                    <ymin></ymin>
+                    <xmax></xmax>
+                    <ymax></ymax>
+                </bndbox>
+            </object>
+
+
                 
         
         '''.format(self.xml_width, self.xml_height, self.xml_name)
 
 
-    def createXML(self, path_str, w_h_range):
+    def createXML(self, path_str):
         list = os.listdir(path_str)
         count = 0
         for i in range(len(list) - 1):
@@ -51,8 +60,8 @@ class AutoBox(ChildAuto):
 
 if __name__ == '__main__':
 
-    obj = AutoBox('1920', '1080', 'Light_House')
-    obj.createXML('C:/Working/02.02/2020-1211 Onsea-BusanPort-Upload$$$$$/Light_House')
+    obj = AutoBox('1920', '1080', 'Bulk_Carrier')
+    obj.createXML('C:/Working/02.17/Bulk_Carrier/')
 
 
 
