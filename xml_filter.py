@@ -66,6 +66,23 @@ class xmlprocess(AutoLabel):
                 if name[-2] == '(' and name[-1] == ')':
                     dst = name.replace('()', '({})'.format(len(xml_count)))
 
+                if name[-2] != '(':
+                    indexNo
+                    indexNo2
+                    text
+                    for i in range(0, len(name)):
+                        if name[i] == '(':
+                            print(i)
+                            indexNo  = i + 1
+                        if name[i] == ')':
+                            print(i)
+                            indexNo2 = i - 1
+                    for j in range(indexNo, indexNo2):
+                        text += name[j]
+
+                    dst = name.replace('text','{}'.format(len(xml_count)))
+
+                    
                 dst = os.path.join(path, dst)
                 os.rename(src, dst)
                 print('{}로 폴더명이 변경되었습니다'.format(dst))
